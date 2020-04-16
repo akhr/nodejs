@@ -2,10 +2,12 @@ const goodReadsJSONResponse = require('goodreads-json-api');
 const https = require('https');
 const API_KEY = require('./api.key'); 
 
-function getBook(isbn) {
-    console.log("Starting to getBook ... ");
+function getData(url) {
+    console.log("Starting to getBook ... "+url);
     var promise = new Promise((resolve, reject) => {
-        https.get(`https://www.goodreads.com/book/isbn/${isbn}?key=${API_KEY.key}`, (res) => {
+        // https.get(`https://www.goodreads.com/book/isbn/${isbn}?key=${API_KEY.key}`, (res) => {
+
+        https.get(url, (res) => {
             const options = {
                 xml: {
                     normalizeWhitespace: true
@@ -49,4 +51,4 @@ function getBook(isbn) {
     return promise;
 }
 
-module.exports.getBook = getBook;
+module.exports.getData = getData;

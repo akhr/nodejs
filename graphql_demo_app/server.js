@@ -1,5 +1,7 @@
 import express from 'express';
 import { ApolloServer, gql } from 'apollo-server-express';
+const fetch = require('node-fetch');
+const API_KEY = require('./api.key'); 
 
 const expressApp = express();
 
@@ -82,4 +84,19 @@ apolloServer.applyMiddleware({
 
 expressApp.listen({port: 8000}, () => {
     console.log("Express Server listening in port 8000...");
-})
+});
+
+
+
+function test() {
+    console.log("In test.js");
+    GetGoodReadsJson.getBook("0441172717")
+    .then((json) => {
+        // console.log(`JSON resp : ${JSON.stringify(json)}`);
+    }).catch((e) => {
+        console.log("Error : "+e);
+    });
+    
+}
+
+test();

@@ -1,0 +1,27 @@
+{
+  "name": "com.akh.node.weather",
+  "version": "1.0.0",
+  "description": "First node js application which is using OpenWeather API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhr/nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "weather"
+  ],
+  "author": "Akhash Ramamurthy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhr/nodejs/issues"
+  },
+  "homepage": "https://github.com/akhr/nodejs#readme",
+  "dependencies": {
+    "request": "^2.88.0",
+    "yargs": "^12.0.2"
+  }
+}

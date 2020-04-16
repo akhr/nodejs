@@ -1,0 +1,110 @@
+[
+    {
+        "name": "policyName_1",
+        "id": "policyId_1",
+        "rules": [
+            {
+                "name": "ruleName_1",
+                "operation": "AND | OR",
+                "action": "allow | deny | verify",
+                "conditions": [
+                    {
+                        "type": "clientIP_category",
+                        "negate": "true | false",
+                        "options": {
+                            "categories": [
+                                "category_1",
+                                "category_2"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "clientIP_location",
+                        "negate": "true | false",
+                        "options": {
+                            "countries": [
+                                "country_1",
+                                "country_2"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "clientIP_network",
+                        "negate": "true | false",
+                        "options": {
+                            "networks": [
+                                "network_1_(CIDR notation)",
+                                "network_1_(CIDR notation)"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "is_trusted",
+                        "negate": "true | false",
+                        "options": {
+                            "previousAuth": {
+                                "dateAndTimeUTC": "YYYY-MM-DD-hh:mm:ss"
+                            }
+                        }
+                    },
+                    {
+                        "type": "is_company_issued",
+                        "negate": "true | false",
+                        "options": {}
+                    },
+                    {
+                        "type": "is_within_allowed_work_hours",
+                        "negate": "true | false",
+                        "options": {
+                            "beginTimeUTC": "hh:mm:ss",
+                            "endTimeUTC": "hh:mm:ss",
+                            "workDays": [
+                                "monday",
+                                "tuesday",
+                                "wednesday",
+                                "thursday",
+                                "friday",
+                                "saturday",
+                                "sunday"
+                            ]
+                        }
+                    },
+                    {
+                        "type": "is_tampered",
+                        "negate": "true | false",
+                        "options": {}
+                    },
+                    {
+                        "type": "os_version",
+                        "negate": "true | false",
+                        "options": {
+                            "platform" : "windows | osX | chromeOS | android | iOS ",
+                            "platformVersion": "major.minor.patch"
+                        }
+                    },
+                    {
+                        "type": "is_encrypted",
+                        "negate": "true | false",
+                        "options": {}
+                    },
+                    {
+                        "type": "is_screenLock_enabled",
+                        "negate": "true | false",
+                        "options": {}
+                    }
+                ]
+            },
+            {
+                "name": "ruleName_2",
+                "operation": "AND | OR",
+                "action": "allow | deny | verify",
+                "conditions": []
+            }
+        ]
+    },
+    {
+        "name": "policyName_2",
+        "id": "policyId_2",
+        "rules": []
+    }
+]
